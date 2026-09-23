@@ -108,3 +108,107 @@ programa {
 	}
 }
 ```
+Análise de Números
+```python
+# Em python
+soma = 0
+maior = None
+menor = None
+
+for i in range(1, 6):
+    numero = float(input(f"Digite o {i}º número: "))
+    soma += numero
+    
+    if maior is None or numero > maior:
+        maior = numero
+    if menor is None or numero < menor:
+        menor = numero
+
+media = soma / 5
+
+print(f"\nSoma: {soma}")
+print(f"Média: {media:.2f}")
+print(f"Maior valor: {maior}")
+print(f"Menor valor: {menor}")
+```
+```portugol
+// Em portugol
+programa {
+	funcao inicio() {
+		real numero, soma = 0.0, media, maior = 0.0, menor = 0.0
+		inteiro i
+
+		para (i = 1; i <= 5; i++) {
+			escreva("Digite o ", i, "º número: ")
+			leia(numero)
+
+			soma = soma + numero
+
+			// Define o primeiro número lido como o maior e o menor inicial
+			se (i == 1) {
+				maior = numero
+				menor = numero
+			} senao {
+				se (numero > maior) { maior = numero }
+				se (numero < menor) { menor = numero }
+			}
+		}
+
+		media = soma / 5
+
+		escreva("\nSoma: ", soma)
+		escreva("\nMédia: ", media)
+		escreva("\nMaior valor: ", maior)
+		escreva("\nMenor valor: ", menor, "\n")
+	}
+}
+```
+Sistema de Autenticação
+```python
+# Em python
+senha_correta = "1234"
+tentativas = 0
+
+while tentativas < 3:
+    senha_digitada = input("Digite a senha: ")
+    tentativas += 1
+    
+    if senha_digitada == senha_correta:
+        print("Acesso Permitido!")
+        break
+    else:
+        print(f"Senha Incorreta. Tentativa {tentativas} de 3.")
+else:
+    print("Acesso Bloqueado após 3 erros.")
+```
+```portugol
+// Em portugol
+programa {
+	funcao inicio() {
+		cadeia senha_correta = "1234"
+		cadeia senha_digitada
+		inteiro tentativas = 0
+		logico bloqueado = falso
+
+		enquanto (tentativas < 3) {
+			escreva("Digite a senha: ")
+			leia(senha_digitada)
+			tentativas = tentativas + 1
+
+			se (senha_digitada == senha_correta) {
+				escreva("Acesso Permitido!\n")
+				pare
+			} senao {
+				escreva("Senha Incorreta. Tentativa ", tentativas, " de 3.\n")
+				se (tentativas == 3) {
+					bloqueado = verdadeiro
+				}
+			}
+		}
+
+		se (bloqueado) {
+			escreva("Acesso Bloqueado após 3 erros.\n")
+		}
+	}
+}
+```
