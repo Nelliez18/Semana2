@@ -16,7 +16,7 @@ print(f"Categoria: {categoria}")
 
 ```
 ```portugol
-# Em portugol
+// Em portugol
 programa {
 	funcao inicio() {
 		inteiro idade
